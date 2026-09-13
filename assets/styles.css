@@ -498,19 +498,25 @@ footer{
 }
 .hp-field{position:absolute; left:-9999px; top:-9999px;}
 .consult-form .btn{width:100%; margin-top:4px;}
+.consult-form .btn[disabled]{opacity:0.6; cursor:not-allowed;}
 .form-note{margin-top:16px; font-size:0.8rem; color:#5b6a6f; text-align:center;}
-.form-success{
-  display:none; background:var(--seafoam); color:var(--driftwood);
-  border-radius:14px; padding:18px 20px; margin-bottom:22px; font-weight:600; font-size:0.95rem;
-}
-.form-success.show{display:block;}
-.form-hide{display:none;}
 
-.consult-setup-note{
-  background:var(--sandy-shore); border:1px dashed var(--sunset-clay); border-radius:14px;
-  padding:16px 18px; margin-bottom:26px; font-size:0.86rem; color:var(--driftwood); line-height:1.55;
+/* Formspree AJAX hooks: empty by default, library fills them on submit/response */
+[data-fs-success]:empty, [data-fs-error]:empty{display:none;}
+[data-fs-success]:not(:empty){
+  display:block; background:var(--seafoam); color:var(--driftwood);
+  border-radius:14px; padding:16px 18px; margin-bottom:22px; font-weight:600; font-size:0.95rem;
 }
-.consult-setup-note strong{color:var(--sunset-clay);}
+.consult-form > [data-fs-error]:not(:empty){
+  display:block; background:#F6DCD3; color:#8a3a24; border:1px solid var(--sunset-clay);
+  border-radius:12px; padding:14px 16px; margin-bottom:18px; font-size:0.88rem; font-weight:600;
+}
+.form-field [data-fs-error]:not(:empty){
+  display:block; color:#b3492f; font-size:0.8rem; margin-top:-2px;
+}
+.form-field input[aria-invalid="true"], .form-field select[aria-invalid="true"], .form-field textarea[aria-invalid="true"]{
+  border-color:#b3492f;
+}
 
 /* ---------- FAQ ---------- */
 .faq{background:var(--white);}
