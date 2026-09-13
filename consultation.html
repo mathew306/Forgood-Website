@@ -73,42 +73,42 @@
       </div>
 
       <div>
-        <div class="form-success" id="form-success">Thanks &mdash; your request is in. We'll reach out within one business day to find a time that works.</div>
-
-        <form class="consult-form" id="consult-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <div class="consult-setup-note">
-            <strong>Setup note (remove once live):</strong> this form posts to Formspree. Create a free form at formspree.io, then replace <code>YOUR_FORM_ID</code> in this file's <code>&lt;form action&gt;</code> with your real endpoint, and swap the <code>_next</code> field below to your live forgood.fit URL. Until then, submissions won't go anywhere.
-          </div>
+        <form class="consult-form" id="consult-form" action="https://formspree.io/f/mnpqkdvr" method="POST">
+          <div data-fs-success></div>
+          <div data-fs-error></div>
 
           <input type="hidden" name="_subject" value="New Free Consultation Request — For Good Personal Training">
-          <input type="hidden" name="_next" value="https://forgood.fit/consultation.html?sent=true">
           <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off">
 
           <div class="form-row">
             <div class="form-field">
               <label for="first-name">First name</label>
-              <input type="text" id="first-name" name="First name" required>
+              <input type="text" id="first-name" name="First name" data-fs-field required>
+              <span data-fs-error="First name"></span>
             </div>
             <div class="form-field">
               <label for="last-name">Last name</label>
-              <input type="text" id="last-name" name="Last name" required>
+              <input type="text" id="last-name" name="Last name" data-fs-field required>
+              <span data-fs-error="Last name"></span>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-field">
               <label for="email">Email</label>
-              <input type="email" id="email" name="Email" required>
+              <input type="email" id="email" name="Email" data-fs-field required>
+              <span data-fs-error="Email"></span>
             </div>
             <div class="form-field">
               <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="Phone">
+              <input type="tel" id="phone" name="Phone" data-fs-field>
+              <span data-fs-error="Phone"></span>
             </div>
           </div>
 
           <div class="form-field">
             <label for="interest">What are you interested in?</label>
-            <select id="interest" name="Interested in">
+            <select id="interest" name="Interested in" data-fs-field>
               <option value="Not sure yet">Not sure yet</option>
               <option value="Foundations ($299/mo)">Foundations ($299/mo)</option>
               <option value="All-In (founding rate $499/mo)">All-In (founding rate $499/mo)</option>
@@ -119,10 +119,10 @@
 
           <div class="form-field">
             <label for="goals">Tell us a bit about your goals</label>
-            <textarea id="goals" name="Goals" placeholder="What are you hoping to work on? Any injuries or schedule constraints we should know about?"></textarea>
+            <textarea id="goals" name="Goals" data-fs-field placeholder="What are you hoping to work on? Any injuries or schedule constraints we should know about?"></textarea>
           </div>
 
-          <button type="submit" class="btn btn-clay">Request My Free Consultation</button>
+          <button type="submit" class="btn btn-clay" data-fs-submit-btn>Request My Free Consultation</button>
           <p class="form-note">We'll never share your info. No obligation to sign up for anything.</p>
         </form>
       </div>
@@ -172,10 +172,17 @@
   </footer>
 
   <script src="assets/nav.js" defer></script>
+
+  <!-- Formspree AJAX: submits without leaving the page, shows inline success/error messages -->
+  <script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#consult-form', formId: 'mnpqkdvr' });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
   <script>
     (function () {
       var params = new URLSearchParams(window.location.search);
-
       var tierMap = {
         foundations: 'Foundations ($299/mo)',
         allin: 'All-In (founding rate $499/mo)',
@@ -186,13 +193,6 @@
       if (tier && tierMap[tier]) {
         var select = document.getElementById('interest');
         if (select) select.value = tierMap[tier];
-      }
-
-      if (params.get('sent') === 'true') {
-        var success = document.getElementById('form-success');
-        var form = document.getElementById('consult-form');
-        if (success) success.classList.add('show');
-        if (form) form.classList.add('form-hide');
       }
     })();
   </script>
