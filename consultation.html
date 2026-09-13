@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Free Consultation — for good Personal Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+  <!-- ================= NAV ================= -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="assets/logo-symbol.png" alt="For Good symbol">
+        <span>for good<small>PERSONAL TRAINING</small></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="program.html">The Program</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="#login" class="link-quiet">Client Login</a>
+        <a href="consultation.html" class="btn btn-clay" aria-current="page">Book a Free Consultation</a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="icon-menu" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="program.html">The Program</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <div class="mobile-actions">
+        <a href="#login" class="link-quiet-mobile">Client Login</a>
+        <a href="consultation.html" class="btn btn-clay">Book a Free Consultation</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= PAGE HERO ================= -->
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <h1>Book your free consultation</h1>
+      <p>Twenty minutes, no pressure and no pitch. Tell us a bit about yourself below and we'll follow up to find a time that works.</p>
+    </div>
+    <div class="hero-waves" aria-hidden="true">
+      <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+        <path d="M0,90 C220,30 340,120 560,70 C780,20 900,110 1120,60 C1260,30 1360,50 1440,44 L1440,140 L0,140 Z" fill="#0B3B48" opacity="0.9"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- ================= CONSULTATION FORM ================= -->
+  <section class="consult">
+    <div class="wrap consult-grid">
+
+      <div class="consult-info">
+        <h2>What to expect</h2>
+        <p>This is a conversation, not a sales pitch. We'll talk through your goals, your schedule, and where you're starting from, and recommend the tier that actually fits &mdash; even if that's none of them yet.</p>
+        <ul class="vault-list">
+          <li><span class="dot"></span>A short call or video chat, about 20 minutes</li>
+          <li><span class="dot"></span>We'll ask about your goals, training history, and schedule</li>
+          <li><span class="dot"></span>You'll leave with a clear recommendation, not a hard sell</li>
+          <li><span class="dot"></span>No cost, and no obligation to sign up</li>
+        </ul>
+        <p>Prefer to just call or email? Reach us directly at <a href="mailto:hello@forgoodpt.com" style="text-decoration:underline;">hello@forgoodpt.com</a> or <a href="tel:+10000000000" style="text-decoration:underline;">(000) 000-0000</a>.</p>
+      </div>
+
+      <div>
+        <div class="form-success" id="form-success">Thanks &mdash; your request is in. We'll reach out within one business day to find a time that works.</div>
+
+        <form class="consult-form" id="consult-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="consult-setup-note">
+            <strong>Setup note (remove once live):</strong> this form posts to Formspree. Create a free form at formspree.io, then replace <code>YOUR_FORM_ID</code> in this file's <code>&lt;form action&gt;</code> with your real endpoint, and swap the <code>_next</code> field below to your live forgood.fit URL. Until then, submissions won't go anywhere.
+          </div>
+
+          <input type="hidden" name="_subject" value="New Free Consultation Request — For Good Personal Training">
+          <input type="hidden" name="_next" value="https://forgood.fit/consultation.html?sent=true">
+          <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off">
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="first-name">First name</label>
+              <input type="text" id="first-name" name="First name" required>
+            </div>
+            <div class="form-field">
+              <label for="last-name">Last name</label>
+              <input type="text" id="last-name" name="Last name" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="Email" required>
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="Phone">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="interest">What are you interested in?</label>
+            <select id="interest" name="Interested in">
+              <option value="Not sure yet">Not sure yet</option>
+              <option value="Foundations ($299/mo)">Foundations ($299/mo)</option>
+              <option value="All-In (founding rate $499/mo)">All-In (founding rate $499/mo)</option>
+              <option value="For Good (current client)">For Good (current client)</option>
+              <option value="Just have a question">Just have a question</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="goals">Tell us a bit about your goals</label>
+            <textarea id="goals" name="Goals" placeholder="What are you hoping to work on? Any injuries or schedule constraints we should know about?"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-clay">Request My Free Consultation</button>
+          <p class="form-note">We'll never share your info. No obligation to sign up for anything.</p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <div class="foot-mark">
+            <img src="assets/logo-symbol.png" alt="For Good symbol">
+            <span>for good</span>
+          </div>
+          <p>Strength, movement and real-life durability, for every adult who wants it.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="program.html">The Program</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Client</h4>
+          <ul>
+            <li><a href="#login">Client Login</a></li>
+            <li><a href="consultation.html">Book a Free Consultation</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Get in touch</h4>
+          <ul>
+            <li><a href="mailto:hello@forgoodpt.com">hello@forgoodpt.com</a></li>
+            <li><a href="tel:+10000000000">(000) 000-0000</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>&copy; 2026 For Good Personal Training. All rights reserved.</span>
+        <span>Coached with care, on the coast.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/nav.js" defer></script>
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+
+      var tierMap = {
+        foundations: 'Foundations ($299/mo)',
+        allin: 'All-In (founding rate $499/mo)',
+        forgood: 'For Good (current client)',
+        question: 'Just have a question'
+      };
+      var tier = params.get('tier');
+      if (tier && tierMap[tier]) {
+        var select = document.getElementById('interest');
+        if (select) select.value = tierMap[tier];
+      }
+
+      if (params.get('sent') === 'true') {
+        var success = document.getElementById('form-success');
+        var form = document.getElementById('consult-form');
+        if (success) success.classList.add('show');
+        if (form) form.classList.add('form-hide');
+      }
+    })();
+  </script>
+</body>
+</html>
