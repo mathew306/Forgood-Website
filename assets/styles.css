@@ -233,6 +233,21 @@ section{padding:110px var(--edge);}
 .section-head{max-width:640px; margin-bottom:56px;}
 .section-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem); font-weight:700; line-height:1.15;}
 .section-head p{margin-top:16px; font-size:1.08rem; color:#5b6a6f; line-height:1.6; max-width:52ch;}
+.section-eyebrow{
+  display:block; font-family:var(--font-head); font-weight:800; font-size:0.8rem;
+  letter-spacing:0.02em; color:var(--sunset-clay); margin-bottom:12px;
+}
+
+/* ---------- PROGRAM TABS (in-page quick nav on program.html) ---------- */
+.program-tabs{display:flex; gap:12px; flex-wrap:wrap; margin-top:32px;}
+.program-tabs a{
+  font-family:var(--font-head); font-weight:700; font-size:0.86rem;
+  padding:10px 22px; border-radius:100px;
+  background:rgba(255,255,255,0.1); color:var(--white);
+  border:1.5px solid rgba(255,255,255,0.45);
+  transition:background .2s ease, transform .18s ease;
+}
+.program-tabs a:hover{background:rgba(255,255,255,0.2); transform:translateY(-2px);}
 
 /* ---------- VIDEO VAULT ---------- */
 .vault{
@@ -458,6 +473,45 @@ footer{
   background:var(--seafoam); transform:translateY(-50%);
 }
 
+/* ---------- CONSULTATION FORM ---------- */
+.consult{background:var(--white);}
+.consult-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:60px; align-items:start;}
+.consult-info h2{font-size:clamp(1.6rem,2.6vw,2rem); font-weight:700; margin-bottom:16px;}
+.consult-info p{color:#5b6a6f; font-size:1.05rem; line-height:1.7; margin-bottom:22px; max-width:50ch;}
+.consult-info .vault-list{margin-bottom:0;}
+
+.consult-form{
+  background:var(--cream); border:1px solid rgba(46,58,63,0.1); border-radius:22px;
+  padding:36px 34px; box-shadow:0 16px 30px -20px rgba(46,58,63,0.3);
+}
+.form-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+.form-field{display:flex; flex-direction:column; gap:8px; margin-bottom:20px;}
+.form-field label{font-family:var(--font-head); font-weight:700; font-size:0.86rem; color:var(--driftwood);}
+.form-field input, .form-field select, .form-field textarea{
+  font-family:var(--font-body); font-size:0.95rem; color:var(--driftwood);
+  background:var(--white); border:1.5px solid rgba(46,58,63,0.18); border-radius:10px;
+  padding:12px 14px; width:100%;
+}
+.form-field textarea{min-height:120px; resize:vertical;}
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus{
+  outline:none; border-color:var(--ocean-deep); box-shadow:0 0 0 3px rgba(15,76,92,0.14);
+}
+.hp-field{position:absolute; left:-9999px; top:-9999px;}
+.consult-form .btn{width:100%; margin-top:4px;}
+.form-note{margin-top:16px; font-size:0.8rem; color:#5b6a6f; text-align:center;}
+.form-success{
+  display:none; background:var(--seafoam); color:var(--driftwood);
+  border-radius:14px; padding:18px 20px; margin-bottom:22px; font-weight:600; font-size:0.95rem;
+}
+.form-success.show{display:block;}
+.form-hide{display:none;}
+
+.consult-setup-note{
+  background:var(--sandy-shore); border:1px dashed var(--sunset-clay); border-radius:14px;
+  padding:16px 18px; margin-bottom:26px; font-size:0.86rem; color:var(--driftwood); line-height:1.55;
+}
+.consult-setup-note strong{color:var(--sunset-clay);}
+
 /* ---------- FAQ ---------- */
 .faq{background:var(--white);}
 .faq-list{max-width:820px;}
@@ -501,7 +555,8 @@ footer{
     width:100%; display:flex; align-items:center; justify-content:center;
     border-bottom:none; color:var(--white);
   }
-  .vault-grid, .split-grid, .split-grid.reverse{grid-template-columns:1fr; gap:40px;}
+  .vault-grid, .split-grid, .split-grid.reverse, .consult-grid{grid-template-columns:1fr; gap:40px;}
+  .form-row{grid-template-columns:1fr;}
   .split-grid.reverse .split-figure{order:0;}
   .foot-top{grid-template-columns:1fr 1fr; gap:32px;}
   .explore-grid{grid-template-columns:repeat(2,1fr);}
