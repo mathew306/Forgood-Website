@@ -473,6 +473,44 @@ footer{
   background:var(--seafoam); transform:translateY(-50%);
 }
 
+/* ---------- MEMBER JOURNEY ---------- */
+.journey{background:var(--cream);}
+.journey-steps{display:flex; flex-direction:column; max-width:760px; margin:0 auto;}
+.journey-step{display:flex; gap:24px; padding-bottom:40px; position:relative;}
+.journey-step:last-child{padding-bottom:0;}
+.journey-step:not(:last-child)::before{
+  content:""; position:absolute; left:20px; top:40px; bottom:0; width:2px; background:rgba(46,58,63,0.15);
+}
+.journey-step .marker{
+  flex:none; width:40px; height:40px; border-radius:50%; background:var(--ocean-deep); color:var(--white);
+  display:flex; align-items:center; justify-content:center; font-family:var(--font-head); font-weight:800; font-size:0.95rem;
+  position:relative; z-index:2;
+}
+.journey-step.is-milestone .marker{background:var(--sunset-clay);}
+.journey-step .content{flex:1; padding-top:4px;}
+.journey-step h3{font-size:1.1rem; font-weight:700; margin-bottom:6px;}
+.journey-step p{font-size:0.95rem; color:#5b6a6f; line-height:1.6; max-width:56ch;}
+.journey-step .badges{display:flex; gap:8px; margin-top:12px; flex-wrap:wrap;}
+.journey-badge{
+  font-family:var(--font-head); font-weight:700; font-size:0.68rem; letter-spacing:0.03em; text-transform:uppercase;
+  padding:5px 11px; border-radius:100px; white-space:nowrap;
+}
+.journey-badge.no-charge{background:var(--seafoam); color:var(--driftwood);}
+.journey-badge.first-charge{background:var(--sunset-clay); color:var(--white);}
+.journey-badge.recurring{background:var(--ocean-deep); color:var(--white);}
+.journey-badge.tier-note{background:var(--sandy-shore); color:var(--driftwood);}
+
+.journey-callout{
+  max-width:760px; margin:56px auto 0; background:var(--driftwood); color:var(--sandy-shore);
+  border-radius:18px; padding:28px 30px; display:flex; gap:20px; align-items:flex-start;
+}
+.journey-callout .icon{
+  flex:none; width:36px; height:36px; border-radius:50%; background:var(--sunset-clay);
+  display:flex; align-items:center; justify-content:center; color:var(--white); font-weight:800; font-family:var(--font-head);
+}
+.journey-callout h3{color:var(--white); font-size:1rem; margin-bottom:6px;}
+.journey-callout p{font-size:0.92rem; line-height:1.6; color:rgba(234,217,198,0.85);}
+
 /* ---------- CONSULTATION FORM ---------- */
 .consult{background:var(--white);}
 .consult-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:60px; align-items:start;}
