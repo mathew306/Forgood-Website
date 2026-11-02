@@ -493,6 +493,13 @@ footer{
 .price-founding-note{
   margin-top:10px; font-size:0.8rem; font-weight:700; color:var(--sunset-clay); line-height:1.4;
 }
+.price-upfront{
+  margin-top:10px;
+  font-family:var(--font-head);
+  font-weight:700;
+  font-size:1.05rem;
+  color:var(--ocean-deep);
+}
 .price-card ul{margin-top:26px; display:flex; flex-direction:column; gap:13px; flex:1;}
 .price-card ul li{display:flex; gap:10px; font-size:0.94rem; color:var(--driftwood); align-items:flex-start; line-height:1.4;}
 .price-card ul li svg{width:15px; height:15px; margin-top:2px; flex:none; color:var(--seafoam);}
