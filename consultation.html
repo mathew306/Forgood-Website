@@ -129,8 +129,8 @@
             <select id="interest" name="Interested in" data-fs-field>
               <option value="Not sure yet">Not sure yet</option>
               <option value="Foundations ($299/mo, ongoing)">Foundations ($299/mo, ongoing)</option>
-              <option value="All-In (3 months, $1,000/mo or $2,500 upfront)">All-In (3 months, $1,000/mo or $2,500 upfront)</option>
-              <option value="For Good (current client)">For Good (current client)</option>
+              <option value="All-In (3-month commitment, $1,000/mo or $2,500 upfront)">All-In (3-month commitment, $1,000/mo or $2,500 upfront)</option>
+              <option value="For Good ($199/mo, after All-In or Foundations)">For Good ($199/mo, after All-In or Foundations)</option>
               <option value="Just have a question">Just have a question</option>
             </select>
           </div>
@@ -206,8 +206,8 @@
       var params = new URLSearchParams(window.location.search);
       var tierMap = {
         foundations: 'Foundations ($299/mo, ongoing)',
-        allin: 'All-In (3 months, $1,000/mo or $2,500 upfront)',
-        forgood: 'For Good (current client)',
+        allin: 'All-In (3-month commitment, $1,000/mo or $2,500 upfront)',
+        forgood: 'For Good ($199/mo, after All-In or Foundations)',
         question: 'Just have a question'
       };
       var tier = params.get('tier');
