@@ -340,6 +340,8 @@ section{padding:110px var(--edge);}
   background:linear-gradient(200deg, var(--seafoam) 0%, var(--ocean-deep) 100%);
 }
 .split-figure svg{position:absolute; inset:0; width:100%; height:100%;}
+.split-figure.coach-photo{aspect-ratio:1/1;}
+.split-figure.coach-photo img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
 .split-caption{
   position:absolute; left:24px; bottom:24px; right:24px; color:var(--white);
   font-family:var(--font-head); font-weight:700; font-size:1.1rem;
@@ -391,23 +393,6 @@ section{padding:110px var(--edge);}
 .owner-todo p, .story-todo p{color:var(--driftwood); font-size:0.98rem; line-height:1.6; margin:0;}
 .owner-todo p + p, .story-todo p + p{margin-top:10px;}
 
-.photo-todo{
-  border-radius:20px;
-  aspect-ratio:4/5;
-  background:
-    repeating-linear-gradient(135deg, rgba(15,76,92,0.06) 0 14px, rgba(15,76,92,0.12) 14px 28px);
-  border:2px dashed var(--ocean-deep);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:32px 24px;
-  text-align:center;
-}
-.photo-todo p{
-  font-family:var(--font-head); font-weight:700; color:var(--ocean-deep);
-  font-size:1.05rem; line-height:1.45; margin:0;
-}
-.split-grid.reverse .photo-todo{order:2;}
 
 /* ---------- CTA BAND ---------- */
 .cta-band{
@@ -673,7 +658,6 @@ footer{
   .feature-rows{grid-template-columns:1fr;}
   .onboard-grid{grid-template-columns:1fr;}
   .onboard-grid .feature-row{grid-column:auto;}
-  .split-grid.reverse .photo-todo{order:0;}
   .pricing-grid{grid-template-columns:1fr; max-width:420px; margin:0 auto;}
   .price-card.featured{transform:none;}
   .program-arc{flex-direction:column; gap:20px; align-items:stretch;}
